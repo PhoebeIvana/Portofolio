@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Styles Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Alex Styles</h1>
+        <nav>
+            <ul>
+                <li><a href="#about" title="Learn more about Alex">About</a></li>
+                <li><a href="#portfolio" title="Check out Alex's work">Portfolio</a></li>
+                <li><a href="#contact" title="Get in touch with Alex">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hi, I'm Alex Styles, a passionate web developer specializing in front-end design and development.</p>
+    </section>
+
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="project">
+                <h3>Project One</h3>
+                <p>A description of the first project.</p>
+                <button class="modal-btn">View More</button>
+            </div>
+            <div class="project">
+                <h3>Project Two</h3>
+                <p>A description of the second project.</p>
+                <button class="modal-btn">View More</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <p>More details about the project...</p>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll(".modal-btn").forEach(button => {
+            button.addEventListener("click", function() {
+                document.getElementById("modal").style.display = "block";
+            });
+        });
+
+        document.querySelector(".close-btn").addEventListener("click", function() {
+            document.getElementById("modal").style.display = "none";
+        });
+    </script>
+</body>
+</html>
